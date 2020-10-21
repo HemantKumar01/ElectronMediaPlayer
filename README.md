@@ -20,3 +20,5 @@ clone the code using
 `gh repo clone HemantKumar01/ElectronMediaPlayer`
 then install electron and other dependencies ,if any, from npm from the folder
 then run using npm start or adding a script with arguments
+
+## Note change the args script in package.json according to your arguments
