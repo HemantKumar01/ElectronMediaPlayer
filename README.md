@@ -13,6 +13,7 @@ it is not completed yet. things that need to be added-
 2. adding elements to process.argv as they differ after building
 3. adding a loop button with respect to the code
 4. saving volume to localStorage whenever it is changed
+5.  Zoom in and out in a video
 
 any change will be APPRECIATED. you can contribute by adding any simple thing from above or anything else to make it best
 ## Usage
