@@ -9,8 +9,8 @@
   },
   "scripts": {
     "start": "electron .",
-  /*  "args":"./node_modules/.bin/electron main.js \"E:\\my programs\\batch\\dupliv.mp4\" \"E:\\my programs\\blender\\videos and sounds\\20200917_105522.mp4\" \"E:\\my programs\\blender\\PROJECTS\\camTracking\\untitled.blend1\" \"E:\\my programs\\blender\\PROJECTS\\camTracking\\20200729_121501.mp4\""
-               You can add arguments as this*/
+    "args":"./node_modules/.bin/electron main.js \"E:\\my programs\\batch\\dupliv.mp4\" \"E:\\my programs\\blender\\videos and sounds\\20200917_105522.mp4\" \"E:\\my programs\\blender\\PROJECTS\\camTracking\\untitled.blend1\" \"E:\\my programs\\blender\\PROJECTS\\camTracking\\20200729_121501.mp4\""
+            
   },
   "keywords": [
     "media",
