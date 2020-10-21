@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <title>HMediaPlayer</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="titlebarStyle.css">
+    </head>
+    <body>
+        
+        <header id="titlebar">
+            <div id="drag-region">
+                <div id="window-title">
+                    <span id="headTitle">HVideo Player</span>
+                  </div>
+                <div id="window-controls">
+
+                    <div class="button" id="min-button">
+                      <img class="icon" srcset="res/min-w-30.png 3.5x" draggable="false" />
+                    </div>
+              
+                    <div class="button" id="max-button">
+                      <img class="icon" srcset="res/max-w-30.png 3.5x" draggable="false" />
+                    </div>
+              
+                    <div class="button" id="restore-button">
+                      <img class="icon" srcset="res/restore-w-30.png 3.5x" draggable="false" />
+                    </div>
+              
+                    <div class="button" id="close-button">
+                      <img class="icon" srcset="res/close-w-30.png 3.5x" draggable="false" />
+                    </div>
+              
+                  </div>
+            </div>
+        </header>
+
+
+        <div class="holder" id="holder">
+            <video id="mainVideo" autoplay>HTML5 support lost error. try reinstalling the program with correct installer</video>
+            <img id="back5sImage" class="playGrow" src="./res/back5s-w.png">
+            <img id="playGrow" class="playGrow" src="res/play-w.png">
+            <img id="front5sImage" class="playGrow" src="./res/front5s-w.png">
+            <div id="controlPane">
+                <center>
+                    <button id="previous" type="button"  onclick="changeVideo('previous')"><img id="previousImage" src="./res/previous-w.png" height="17px" width="21px"></button>
+                    <button id="back5sec" type="button"  onclick="changeTime('back',5)"><img id="back5sImage" src="./res/back5s-w.png" height="26px" width="35px"></button>
+                    <button id="playPause" type="button"  onclick="playPause()"><img id="playImage" src="./res/pause-w.png" height="20px" width="18px"></button>
+                    <button id="front5sec" type="button"  onclick="changeTime('front',5)"><img id="front5sImage" src="./res/front5s-w.png" height="26px" width="35px"></button>
+                    <button id="next" type="button"  onclick="changeVideo('next')"><img id="nextImage" src="./res/next-w.png" height="17px" width="21px"></button>
+                    <button id="mute" type="button"  onclick="muteVideo()"><img id="muteImage" src="./res/sound-full-w.png" height="18px" width="21px"></button> 
+                    <div id="containerVol">
+                        <input type="range" id="rv" name="vol" min="0" max="100" value="100">   
+                    </div> 
+                    <button id="fullS" type="button"  onclick="fullscreen()"><img id="fullSImage" src="./res/fullScreen-w.png" height="21px" width="21px"></button> 
+                </center>
+                
+            </div>
+        </div>
+        
+        
+    </body>
+    <script>
+        //node_modules' import and initialization
+        var {remote}=require('electron');
+        var path=require('path');
+        var fs=require('fs');
+        //video arguments' array
+        var args=[];
+        const win = remote.getCurrentWindow(); /* Note this is different to the
+                                                html global `window` variable */
+
+        //DOM variables init
+        var video=document.querySelector("#mainVideo"),
+        controlPane=document.querySelector("#controlPane");
+
+        //other vars;
+        var index=2;
+        var timeout;
+        var files;
+
+        //video control booleans
+        var loop=false;
+        volume=1;//1=full
+
+        window.onload=async ()=>{
+            handleWindowControls();
+            
+            volume=localStorage.getItem("volume")!=null && localStorage.getItem("volume")!=undefined?localStorage.getItem("volume"):1;
+            console.log("volume",volume)
+            changeVolume();
+            args=remote.getGlobal('sharedObject').prop1;
+            console.log(args);
+
+            if(args!=undefined && args!=null){
+                for(var iii=2;iii<args.length;iii++){
+                    if(!(path.extname(args[iii])=='.mp4' || path.extname(args[iii])=='.mp3' || path.extname(args[iii])=='.gif' || path.extname(args[iii])=='.ogg' || path.extname(args[iii])=='.3gp' || path.extname(args[iii])=='.wmv' || path.extname(args[iii])=='.flv' || path.extname(args[iii])=='.mov' || path.extname(args[iii])=='.webm' || path.extname(args[iii])=='.mkv' || path.extname(args[iii])=='.avi' ||path.extname(args[iii])=='.mpg' || path.extname(args[iii])=='.MPG'|| path.extname(args[iii])=='.3gpp')){
+                        console.log(args[iii])
+                        deleteArrElement(args,iii);
+                    }
+                }
+                console.log(args);
+                //keeping `if(args.length==0){}else{}` separate as if args is undefined, getting its length will through an error
+                if(args.length>2){
+                    loadVideo(args);
+                }else{
+                    loadHome();
+                }
+            }else{
+                    loadHome();
+                }
+        }
+        
+    </script>
+    <script src="functioning.js"></script>
+    <script src="controls.js"></script>
+    <script src="titlebar.js"></script>
+    <script src="deleteArrElem.js"></script>
+</html>

@@ -1,0 +1,76 @@
+body{
+    background-color: rgb(0, 0, 0);
+    margin: 0;
+    overflow: hidden;
+    
+}
+#controlPane{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 90%;
+    margin:0;
+    padding:10px;
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
+}
+#controlPane button{
+    background-color: rgba(0,0,0,0);
+    border-width: 0;
+    border: 0;
+    margin:10px;
+    padding: 10px;
+}
+#controlPane button:hover{
+    border:0;
+    border-radius: 10px;
+    background-color: rgba(255, 102, 0, 0.123);
+}
+#controlPane button:focus{
+    outline:0;
+}
+.playGrow{
+    display:none;
+
+}
+.playAfter{
+    display: block;
+    position:fixed;
+    top:45%;
+    left:45%;
+    animation-name: playPause;
+    animation-duration: 1s;
+}
+@keyframes playPause{
+    0%{opacity:0; transform: scale(0,0);}
+    25% {opacity:0.7; transform: scale(1,1);}
+    100% {opacity:0; transform: scale(0,0);}
+}
+.holder{
+    height: 95.5%;
+    margin:0px;
+    margin-top:32px;
+    padding: 0;
+    width: 100%;
+    -webkit-app-region: no-drag;
+}
+#mainVideo{
+    width: 100%;
+    height: 100%;
+}
+#containerVol{
+    display: inline;
+    width:30px;
+    height:10px;
+}
+#rv{
+    display: inline;
+
+}
+#rv::-webkit-slider-thumb{
+    background: white;
+}
+#fullS{
+    display:inline;
+    float:right;
+    
+}

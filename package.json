@@ -1,0 +1,30 @@
+{
+  "name": "hmediaplayer",
+  "version": "1.0.0",
+  "description": "a nice, good looking basic video player",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^10.1.3"
+  },
+  "scripts": {
+    "start": "electron .",
+    "args":"./node_modules/.bin/electron main.js \"E:\\my programs\\batch\\dupliv.mp4\" \"E:\\my programs\\blender\\videos and sounds\\20200917_105522.mp4\" \"E:\\my programs\\blender\\PROJECTS\\camTracking\\untitled.blend1\" \"E:\\my programs\\blender\\PROJECTS\\camTracking\\20200729_121501.mp4\""
+  },
+  "keywords": [
+    "media",
+    "media",
+    "player",
+    "video",
+    "videos",
+    "video",
+    "player",
+    "basic",
+    "good",
+    "nice",
+    "best",
+    "gui"
+  ],
+  "author": "HemTech",
+  "license": "MIT"
+}
