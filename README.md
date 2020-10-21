@@ -15,3 +15,8 @@ it is not completed yet. things that need to be added-
 4. saving volume to localStorage whenever it is changed
 
 any change will be APPRECIATED. you can contribute by adding any simple thing from above or anything else to make it best
+## Usage
+clone the code using 
+`gh repo clone HemantKumar01/ElectronMediaPlayer`
+then install electron and other dependencies ,if any, from npm from the folder
+then run using npm start or adding a script with arguments
