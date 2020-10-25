@@ -84,7 +84,7 @@
         window.onload=async ()=>{
             handleWindowControls();
             
-            volume=localStorage.getItem("volume")!=null && localStorage.getItem("volume")!=undefined?localStorage.getItem("volume"):1;
+            volume=(localStorage.getItem("volume")!=null && localStorage.getItem("volume"))!=undefined?parseInt(localStorage.getItem("volume")):1;
             console.log("volume",volume)
             changeVolume();
             args=remote.getGlobal('sharedObject').prop1;
