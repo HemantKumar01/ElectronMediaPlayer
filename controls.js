@@ -111,6 +111,7 @@ function changeVideo(direction){
     function changeVolume(){
         //init videovolume
         video.volume=volume;
+        localStorage.setItem("volume",volume.toString());
         document.getElementById('rv').value=volume*100;
         if(volume>0.5 && volume<=1){
             document.querySelector("#muteImage").src="./res/sound-full-w.png";
