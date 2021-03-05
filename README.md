@@ -1,8 +1,5 @@
 # ElectronMediaPlayer
 
-### note -
-
-the code will only work after installing electron; check package.json for more details.
 
 ## Goal
 
