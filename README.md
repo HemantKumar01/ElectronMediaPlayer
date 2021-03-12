@@ -15,7 +15,7 @@ any change will be APPRECIATED. you can contribute by adding any simple thing fr
 ## Usage
 clone the code using 
 `gh repo clone HemantKumar01/ElectronMediaPlayer`
-then install electron and other dependencies ,if any, from npm from the folder
-then run using npm start or adding a script with arguments
+then install electron and other dependencies from npm from the folder
+then run using npm start or adding a script with arguments(check npm run args after changing file location in script args)
 
 ## Note change the args script in package.json according to your arguments
