@@ -21,5 +21,5 @@ then run using npm start or adding a script with arguments(check npm run args af
 ## Note change the args script in package.json according to your arguments
 
 
-## thanks to all our stargazers
+## 👏 supporters...
 [![Stargazers repo roster for @HemantKumar01/ElectronMediaPlayer](https://reporoster.com/stars/HemantKumar01/ElectronMediaPlayer)](https://github.com/HemantKumar01/ElectronMediaPlayer/stargazers)
