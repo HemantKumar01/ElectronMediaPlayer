@@ -3,9 +3,9 @@
 
 ## Goal
 
-this project aims on creating a media player, which can be most easily used and has a nice gui and functioning.
-it is not completed yet. things that need to be added-
+this project aims on creating a media player, which can be easily used and has a nice ui and functioning.
 
+TODO:
 1. a slider to show video duration and time
 2. adding elements to process.argv as they differ after building
 3. adding a loop button with respect to the code
